@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My first page</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        #message {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">Hola Mundo</div>
+    <button onclick="changeColor()">Cambiar Color</button>
+    <button onclick="changeLanguage()">Cambiar Idioma</button>
+
+    <script>
+        function changeColor() {
+            const colors = ['red', 'blue', 'green', 'purple', 'orange'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.getElementById('message').style.color = randomColor;
+        }
+        
+        function changeLanguage() {
+            const message = document.getElementById('message');
+            message.textContent = message.textContent === 'Hola Mundo' ? 'Hello World' : 'Hola Mundo';
+        }
+    </script>
+</body>
+</html>
